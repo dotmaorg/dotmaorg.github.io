@@ -233,7 +233,7 @@ const MainContent = () => (
 				<Flex align="center" gap="2" mb="6">
 					<Badge asChild size="3" radius="full">
 						<NextLink href="/blog/seekgpt-blueprint">
-							Read about SeekGPT Blueprint 1.0
+							Everyone is Good at Something!
 							<ArrowRightIcon
 								width="15"
 								height="15"
@@ -244,9 +244,9 @@ const MainContent = () => (
 				</Flex>
 				<Box display={{ lg: "none" }}>
 					<SerifHeading mb="3">
-						Start building
+						Start supporting
 						<br />
-						your app now
+						your party now
 					</SerifHeading>
 				</Box>
 				<Box display={{ initial: "none", lg: "block" }}>
@@ -259,9 +259,9 @@ const MainContent = () => (
 							} as React.CSSProperties
 						}
 					>
-						Start building
+						Start supporting
 						<br />
-						your AI app now
+						your party now
 					</SerifHeading>
 				</Box>
 			</Box>
@@ -269,7 +269,9 @@ const MainContent = () => (
 			<Box style={{ maxWidth: 500 }}>
 				<Text size={{ initial: "4", xs: "5" }}>
 					<Text as="p" mb="5" color="gray">
-						An open, and ethically grounded Artificial General Intelligence (AGI) foundational model.
+						This website do not belong to any political party. It is an open source
+						project built to help people support their favorite political parties
+						through donations and volunteering.
 					</Text>
 
 					<Box mb="5">
@@ -291,7 +293,7 @@ const MainContent = () => (
 
 				<Flex gap="4" direction={{ initial: "column", xs: "row" }}>
 					<NextLink
-						href="https://ai.seekgpt.org"
+						href="/party"
 						passHref
 						legacyBehavior
 					>
@@ -303,7 +305,7 @@ const MainContent = () => (
 							style={{ flexGrow: 1 }}
 						>
 							<a>
-								Get started
+								Find your Party
 								<svg
 									width="14"
 									height="14"
@@ -317,7 +319,7 @@ const MainContent = () => (
 							</a>
 						</Button>
 					</NextLink>
-					<NextLink href="/research/playground" passHref legacyBehavior>
+					<NextLink href="/places" passHref legacyBehavior>
 						<Button
 							asChild
 							size={{ initial: "3", xs: "4" }}
@@ -327,7 +329,7 @@ const MainContent = () => (
 						>
 							<a>
 								<GridIcon width="18" height="18" style={{ marginTop: 1 }} />
-								Playground
+								Places
 							</a>
 						</Button>
 					</NextLink>
@@ -497,38 +499,24 @@ const redBackgroundImageStyle = {
 //   transform: 'scaleY(-0.5) scaleX(-1) rotate(-15deg)',
 
 const codeExample = `
-from seekgpt import SeekGPT
-client = SeekGPT(
-    api_base="https://ai.seekgpt.org/v1",
-    api_key="sk-7302d0fc2623cd5c4dbbb29ed54a4f03", # Your API SeekGPT key 
-    default_model="gpt-5", # The model available on the compatible host
-)
-response = client.chat(
-    messages=[{"role": "user", "content": "Hello OpenAI!"}]
-)
-print(response['choices'][0]['message']['content'])
-
+Bodoland People's Front (BPF)
+United People's Party Liberal (UPPL)
+Bharatiya Janata Party (BJP)
+Indian National Congress (INC)
+Trinamool Congress (TMC)
+Bahujan Samaj Party (BSP)
+Assam Gana Parishad (AGP)
 `.trim();
 
 const secondCodeExample = `
-import OpenAI from 'openai';
-const openai = new OpenAI({
-  apiKey: "your_api_key", // Your API key for the compatible host
-  baseURL: "https://ai.seekgpt.org/v1", // The base URL of the compatible host
-});
-async function aiChat() {
-  try {
-    const chatCompletion = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: 'Hello, world!' }],
-      model: 'gpt-5', // A model available on the compatible host
-    });
-    console.log(chatCompletion.choices[0].message.content);
-  } catch (error) {
-    console.error('Error calling compatible host:', error);
-  }
-}
-aiChat();
-
+New Delhi, India
+Dispur, Assam
+Kokrajhar, BTC
+Guwahati, Assam
+Mumbai, Maharashtra
+Chennai, Tamil Nadu
+Kolkata, West Bengal
+Bhopal, Madhya Pradesh
 `.trim();
 
 
