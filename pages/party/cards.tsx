@@ -227,7 +227,7 @@ export default function BpfCardsPage() {
                             window.location.href = "/party";
                         }}
                     >
-                        Back to BPF
+                        Back to Party Page
                     </button>
                     
                 </Flex>
