@@ -68,35 +68,41 @@ export default function ColorsHome() {
 
 			<Box mx={{ initial: "5", xs: "6", sm: "7", md: "9" }} position="relative">
 				<TitleAndMetaTags
-					title="Political Parties of India"
-					description="Information about major political parties in India."
+					title="Political Parties of Bodoland Territorial Council (BTC)"
+					description="Major political parties active in the Bodoland Territorial Council (BTC) of Assam, India."
 					image="seekgpt.png"
 				/>
 				<Section size={{ initial: "2", md: "4" }}>
 					<Container>
 						<SerifHeading mb="3" style={{ maxWidth: 820 }}>
-							Political Parties of India
+							Political Parties of Bodoland Territorial Council (BTC)
 							
 						</SerifHeading>
 						
 						<Box style={{ maxWidth: 820 }}>
 							<Text size="5" as="p" mb="6" color="gray">
-							Choose your region to explore the major political parties active in that area:
+							The Bodoland Territorial Council (BTC) in Assam, India, is home to several political parties that represent the interests of the Bodo people and other communities in the region. Some of the major political parties active in the BTC include:
 							</Text>
 							<Text size="5" as="p" mb="6" color="gray">
-							1. National: Bharatiya Janata Party (BJP), Indian National Congress (INC), Aam Aadmi Party (AAP)
+							1. Bodoland People's Front (BPF): A regional party that has been a significant player in the BTC, advocating for the rights and development of the Bodo community and other indigenous groups.
 							</Text>
 							<Text size="5" as="p" mb="6" color="gray">
-							2. Regional: Dravida Munnetra Kazhagam (DMK), All India Trinamool Congress (AITC), Shiv Sena (SS), Janata Dal (Secular) (JD(S)), Telangana Rashtra Samithi (TRS), YSR Congress Party (YSRCP), Assam Gana Parishad (AGP), Nationalist Congress Party (NCP), Bodoland People's Front (BPF), United People's Party Liberal (UPPL) etc.
+							2. United People's Party Liberal (UPPL): Another key player in the BTC, the UPP focuses on the rights and development of various indigenous communities in the region.
+
 							</Text>
-							
+							<Text size="5" as="p" mb="6" color="gray">
+							3. Bharatiya Janata Party (BJP): The national party has also made inroads into the BTC, often forming alliances with regional parties to strengthen its presence in the area.
+							</Text>
+							<Text size="5" as="p" mb="6" color="gray">
+							4. Indian National Congress (INC): The Congress party has a historical presence in Assam and continues to be active in the BTC, although its influence has waned in recent years.
+							</Text>
 						</Box>
 						
 
 						<Flex gap="4">
 							<ColorsMarketingButton asChild size={{ initial: "3", xs: "4" }}>
-								<NextLink href="/party/national">
-									About National Parties
+								<NextLink href="/party/btc/bpf">
+									About BPF
 									<svg
 										width="14"
 										height="14"
@@ -117,7 +123,7 @@ export default function ColorsHome() {
 								size={{ initial: "3", xs: "4" }}
 								asChild
 							>
-								<NextLink href="/party/regional">About Regional</NextLink>
+								<NextLink href="/party/btc/uppl">About UPPL</NextLink>
 							</Button>
 							<Button
 								highContrast
@@ -126,7 +132,7 @@ export default function ColorsHome() {
 								size={{ initial: "3", xs: "4" }}
 								asChild
 							>
-								<NextLink href="/party/btc">About BTC</NextLink>
+								<NextLink href="/party/btc/bjp">About BJP</NextLink>
 							</Button>
 							<Button
 								highContrast
@@ -135,7 +141,7 @@ export default function ColorsHome() {
 								size={{ initial: "3", xs: "4" }}
 								asChild
 							>
-								<NextLink href="/party/delhi">About New Delhi</NextLink>
+								<NextLink href="/party/btc/inc">About INC</NextLink>
 							</Button>
 						</Flex>
 						

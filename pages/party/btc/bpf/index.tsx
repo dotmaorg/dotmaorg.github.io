@@ -95,7 +95,7 @@ export default function ColorsHome() {
 
 						<Flex gap="4">
 							<ColorsMarketingButton asChild size={{ initial: "3", xs: "4" }}>
-								<NextLink href="/party/bpf/join">
+								<NextLink href="/party/join">
 									Are you a BPF Supporter? Join Now{" "}
 									<svg
 										width="14"
@@ -117,7 +117,7 @@ export default function ColorsHome() {
 								size={{ initial: "3", xs: "4" }}
 								asChild
 							>
-								<NextLink href="/party/bpf/members">Party Members</NextLink>
+								<NextLink href="/party/btc/bpf/members">Party Members</NextLink>
 							</Button>
 						</Flex>
 						
