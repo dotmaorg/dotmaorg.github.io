@@ -1,6 +1,8 @@
 import * as React from "react";
 import { createClient } from '@supabase/supabase-js';
 import { Avatar, Box, Grid, Heading, Text, Container, Section, Card, Flex } from "@radix-ui/themes";
+import { Separator } from "radix-ui";
+import { SeparatorDemo } from "@components/demos";
 
 
 const supabase = createClient(
@@ -46,7 +48,7 @@ export default function BpfCardsPage() {
                                     <Box width="445px">
                                         <Card>
                                             <Flex>
-                                                {row.party === 'BPF' ? (
+                                                {row.party === 'Bodoland People\'s Front (BPF)' ? (
                                                     <img
                                                         src="/logos/nangal.svg"
                                                         alt="BPF Logo"
@@ -65,41 +67,39 @@ export default function BpfCardsPage() {
                                                         style={{ width: "25%", borderRadius: "1px" }}
                                                     />
                                                 ) : null}
-                                                <Box ml="3">
-                                                    <Text as="div" size="2" weight="bold">
-                                                        {row.party === 'UPPL'
-                                                            ? "United People's Party Liberal (UPPL)"
-                                                            : row.party === 'BPF'
-                                                            ? "Bodoland People's Front (BPF)"
-                                                            : row.party === 'BJP'
-                                                            ? "Bharatiya Janata Party (BJP)"
-                                                            : row.party}
+                                                <Box ml="2">
+                                                    <Text as="div" size="3" weight="bold" align="center">
+                                                        {row.party}
                                                     </Text>
-                                                    <Text as="div" size="2" color="gray">
-                                                        Member since {new Date(row.created_at).toLocaleDateString()}
-                                                    </Text>
+                                                    <Text as="div" size="6" weight="bold" align="center">
+                                                    {row.name}
+                                                </Text>
+                                                <Text as="div" size="1" color="gray" align="center">
+                                                    Member since: {row.created_at ? new Date(row.created_at).toLocaleDateString() : ''}
+                                                </Text>
                                                 </Box>
                                             </Flex>
                                             <Box mt="2">
-                                                <Text as="div" size="6" weight="bold" align="center">
-                                                    {row.name}
-                                                </Text>
-                                            </Box>
-                                            <Box mt="2">
                                                 <Text as="div" size="2" color="gray">
+                                                    MP Constituency: <b>{row.mpconstituency}</b>
+                                                </Text>
+                                                 <Text as="div" size="2" color="gray">
                                                     BTC Constituency: <b>{row.btcconstituency}</b>
                                                 </Text>
-                                            </Box>
-                                            <Box mt="2">
                                                 <Text as="div" size="2" color="gray">
                                                     Assembly Constituency: <b>{row.assemblyconstituency}</b>
                                                 </Text>
                                             </Box>
+                                        
                                             <Box mt="2">
                                                 <Text as="div" size="2" color="gray">
                                                     Address: <b>{row.nearestbazaar}, {row.district}, {row.pincode}</b>
                                                 </Text>
+                                                <Text as="div" size="1" color="red">
+                                                    This is not an official membership card. For official membership, please contact the party directly.
+                                                </Text>
                                             </Box>
+                                    
                                         </Card>
                                     </Box>
                                 </Flex>
@@ -110,57 +110,47 @@ export default function BpfCardsPage() {
                                         <Card>
                                             <Flex>
                                                 <img
-                                                            src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(
-                                                                `Name: ${row.name}\nAddress: ${row.nearestbazaar}, ${row.district}, ${row.pincode}\nBTC Constituency: ${row.btcconstituency}\nAssembly Constituency: ${row.assemblyconstituency}\nParty: ${row.party}\nMember since: ${new Date(row.created_at).toLocaleDateString()}  `
-                                                            )}`}
-                                                            alt="QR code for address"
-                                                            style={{ marginTop: "8px" }}
-                                                        />
+                                                    src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(
+                                                        `Name: ${row.name}\nAddress: ${row.nearestbazaar}, ${row.district}, ${row.pincode}\nBTC Constituency: ${row.btcconstituency}\nAssembly Constituency: ${row.assemblyconstituency}\nParty: ${row.party}\nMember since: ${new Date(row.created_at).toLocaleDateString()}  `
+                                                    )}`}
+                                                    alt="QR code for address"
+                                                    style={{ marginTop: "8px" }}
+                                                />
                                                 <Box ml="3">
                                                     <Text as="div" size="2" weight="bold">
-                                                        {row.party === 'UPPL'
-                                                            ? "United People's Party Liberal (UPPL)"
-                                                            : row.party === 'BPF'
-                                                            ? "Bodoland People's Front (BPF)"
-                                                            : row.party === 'BJP'
-                                                            ? "Bharatiya Janata Party (BJP)"
-                                                            : row.party}
+                                                        {row.party}
                                                     </Text>
                                                     <Text as="div" size="2" color="gray">
                                                         Member since {new Date(row.created_at).toLocaleDateString()}
                                                     </Text>
                                                     <Text as="div" size="2" weight="bold" align="center">
-                                                    Address: <b>{row.nearestbazaar}, {row.district}, {row.pincode}</b>
-                                                </Text>
-                                                <Text as="div" size="2" color="gray">
-                                                    BTC Constituency: <b>{row.btcconstituency}</b>
+                                                        Address: <b>{row.nearestbazaar}, {row.district}, {row.pincode}</b>
+                                                    </Text>
+                                                    <Text as="div" size="2" color="gray">
+                                                        MP Constituency: <b>{row.mpconstituency}</b>
+                                                    </Text>
+                                                    <Text as="div" size="2" color="gray">
+                                                    Assembly Constituency: <b>{row.assemblyconstituency}</b>
                                                 </Text>
                                                 </Box>
                                             </Flex>
-                                            
-                                            
+                                           
                                             <Box mt="2">
                                                 <Text as="div" size="2" color="gray">
-                                                    Assembly Constituency: <b>{row.assemblyconstituency}</b>
+                                                    BTC Constituency: <b>{row.btcconstituency}</b>
+                                                </Text>
+                                            </Box>
+                                            <Box mt="1">
+                                                <Text as="div" size="1" color="red">
+                                                    This is not an official membership card. For official membership, please contact the party directly.
                                                 </Text>
                                             </Box>
                                             <Box mt="2">
-                                                <Text as="div" size="2" weight="bold">
-                                                        {row.party === 'UPPL'
-                                                            ? "United People's Party Liberal (UPPL)"
-                                                            : row.party === 'BPF'
-                                                            ? "Bodoland People's Front (BPF)"
-                                                            : row.party === 'BJP'
-                                                            ? "Bharatiya Janata Party (BJP)"
-                                                            : row.party}
-                                                    </Text>
-                                            </Box>
-                                            <Box mt="2">
-                                                <Text as="div" size="6" weight="regular" align="center">
+                                                <Text as="div" size="5" weight="regular" align="center">
                                                     Member since {new Date(row.created_at).toLocaleDateString()}
                                                 </Text>
-                                                </Box>
-                                                
+                                            </Box>
+
                                         </Card>
                                     </Box>
                                 </Flex>
@@ -229,9 +219,9 @@ export default function BpfCardsPage() {
                     >
                         Back to Party Page
                     </button>
-                    
+
                 </Flex>
-               
+
             </Section>
 
         </Container>
